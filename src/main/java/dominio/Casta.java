@@ -2,6 +2,12 @@ package dominio;
 
 import java.io.Serializable;
 
+/**
+ * 
+ *  Crea una de las posibles castas para el personaje y establece sus habilidades basicas disponibles y sus valores
+ *
+ */
+
 public abstract class Casta implements Serializable {
 	protected double probabilidadGolpeCritico;
 	protected double probabilidadEvitarDaño;
@@ -10,12 +16,26 @@ public abstract class Casta implements Serializable {
 
 	protected String[] habilidadesCasta;
 
+	
+		/**
+	 * 
+	 * Establece valores arbitrarios para las diferentes habilidades de una casta
+	 * 
+	 */
 	public Casta() {
 		this.probabilidadGolpeCritico = 0.2;
 		this.probabilidadEvitarDaño = 0.2;
 		this.dañoCritico = 1.5;
 	}
 
+	/**
+	 * 
+	 * Establece los valores para las diferentes habilidades de una casta determinada, que son enviados por parametro
+	 * 
+	 * @param prob_crit
+	 * @param evasion
+	 * @param daño_crit
+	 */
 	public Casta(double prob_crit, double evasion, double daño_crit) {
 		this.probabilidadGolpeCritico = prob_crit;
 		this.probabilidadEvitarDaño = evasion;
