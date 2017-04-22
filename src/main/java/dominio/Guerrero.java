@@ -1,5 +1,11 @@
 package dominio;
 
+/**
+ * 
+ * Tipo de personaje que puede tener un jugador, con habilidades propias de 
+ * dicha casta para un Guerrero.
+ *
+ */
 public class Guerrero extends Casta {
 
 	public Guerrero(double prob_crit, double evasion, double daño_crit) {
@@ -16,8 +22,11 @@ public class Guerrero extends Casta {
 		habilidadesCasta[1] = "Aumentar Defensa";
 		habilidadesCasta[2] = "Ignorar Defensa";
 	}
-
-	// Ataque Doble
+	
+	/**
+	 * permite el uso de la habilidad "Ataque Doble" propia de la casta "Guerrero"
+	 * y establece sus efectos y condicion de uso
+	 */
 	public boolean habilidad1(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -27,7 +36,10 @@ public class Guerrero extends Casta {
 		return false;
 	}
 	
-	// Aumentar Defensa
+	/**
+	 * permite el uso de la habilidad "Aumentar Defensa" propia de la casta "Guerrero"
+	 * y establece sus efectos y condicion de uso
+	 */
 	public boolean habilidad2(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);

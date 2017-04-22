@@ -1,5 +1,9 @@
 package dominio;
-
+/**
+ * 
+ * Una de las posibles razas de personajes que el jugador puede elegir
+ * La cual posee sus propias habilidades
+ */
 public class Elfo extends Personaje {
 
 	public Elfo(String nombre, Casta casta, int id) {
@@ -26,7 +30,10 @@ public class Elfo extends Personaje {
 		habilidadesRaza[1] = "Ataque Bosque";
 	}
 
-	// Golpe Level
+
+	/**
+	 * Habilidad "Golpe level" particular de la raza
+	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
@@ -36,7 +43,9 @@ public class Elfo extends Personaje {
 		return false;
 	}
 
-	// Ataque Bosque
+	/**
+	 * Habilidad "Ataque Bosque" particular de la raza
+	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);

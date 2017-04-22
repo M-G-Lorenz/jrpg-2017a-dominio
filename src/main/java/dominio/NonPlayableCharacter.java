@@ -1,5 +1,10 @@
 package dominio;
 
+/**
+ * 
+ * establece los personajes no manejables por el jugador (NPCs) y sus estadisticas y atributos
+ *
+ */
 public class NonPlayableCharacter implements Peleable {
 
 	private int salud;
@@ -9,6 +14,13 @@ public class NonPlayableCharacter implements Peleable {
 	private int nivel;
 	private static final int dificultadAleatoria = -1;
 
+	/**
+	 * establece un personaje no jugable con determinados atributos basados en la dificultad 
+	 * elegida
+	 * @param nombre
+	 * @param nivel
+	 * @param dificultadNPC
+	 */
 	public NonPlayableCharacter(String nombre, int nivel, int dificultadNPC) {
 		this.nombre = nombre;
 		this.nivel = nivel;
@@ -37,7 +49,9 @@ public class NonPlayableCharacter implements Peleable {
 
 		}
 	}
-
+	/**
+	 * sube experiencia de el personaje no manejable por el jugador (NPCs)
+	 */
 	public int otorgarExp() {
 		return this.nivel * 30;
 	}
@@ -93,6 +107,10 @@ public class NonPlayableCharacter implements Peleable {
 			return atacado.serAtacado(this.getAtaque());
 	}
 
+	/**
+	 * reduce la defensa y salud del personaje no jugable cuando es atacado y devuelve el daño recibido,
+	 * o devuelve cero si esquivo el golpe o su defensa es mayor que el daño del atacante
+	 */
 	public int serAtacado(int daño) {
 		if (MyRandom.nextDouble() >= 0.15) {
 			daño -= this.getDefensa() / 2;

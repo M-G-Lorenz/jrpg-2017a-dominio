@@ -1,7 +1,12 @@
 package dominio;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * Establece el personaje usado por el jugador, con su nombre, alianza, habilidades basicas
+ *  y atributos
+ *
+ */
 public abstract class Personaje implements Peleable, Serializable {
 
 	protected int salud;
@@ -50,6 +55,7 @@ public abstract class Personaje implements Peleable, Serializable {
 			Personaje.tablaDeNiveles[i] = Personaje.tablaDeNiveles[i - 1] + 50;
 	}
 
+
 	public Personaje(String nombre, Casta casta, int id) {
 		this.nombre = nombre;
 		this.casta = casta;
@@ -77,6 +83,19 @@ public abstract class Personaje implements Peleable, Serializable {
 
 	}
 
+	/**
+	 * crea un personaje con nivel y demas atributos enviados por parametro
+	 * @param nombre
+	 * @param salud
+	 * @param energia
+	 * @param fuerza
+	 * @param destreza
+	 * @param inteligencia
+	 * @param casta
+	 * @param experiencia
+	 * @param nivel
+	 * @param idPersonaje
+	 */
 	public Personaje(String nombre, int salud, int energia, int fuerza, int destreza, int inteligencia, Casta casta,
 			int experiencia, int nivel,
 			int idPersonaje) {
@@ -274,7 +293,9 @@ public abstract class Personaje implements Peleable, Serializable {
 	public int calcularPuntosDeMagia() {
 		return (int) (this.getInteligencia() * 1.5);
 	}
-
+	/**
+	 * Devuelve la salud por completo al personaje
+	 */
 	public void restablecerSalud() {
 		this.salud = this.saludTope;
 	}
@@ -403,7 +424,11 @@ public abstract class Personaje implements Peleable, Serializable {
 		}
 		this.experiencia -= acumuladorExperiencia;
 	}
-
+	/**
+	 * Incrementa la experiencia del personaje, es decir sube un nivel.
+	 * @param exp
+	 * @return
+	 */
 	public boolean ganarExperiencia(int exp) {
 		this.experiencia += exp;
 

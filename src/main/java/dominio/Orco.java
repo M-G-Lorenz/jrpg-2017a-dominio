@@ -1,5 +1,10 @@
 package dominio;
 
+/**
+ * 
+ * Una de las posibles razas de personajes que el jugador puede elegir
+ * La cual posee sus propias habilidades
+ */
 public class Orco extends Personaje {
 
 	public Orco(String nombre, Casta casta, int id) {
@@ -24,7 +29,9 @@ public class Orco extends Personaje {
 		habilidadesRaza[1] = "Mordisco de Vida";
 	}
 
-	// Golpe Defensa
+	/**
+	 * Habilidad "Golpe Defensa" particular de la raza
+	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
@@ -34,7 +41,9 @@ public class Orco extends Personaje {
 		return false;
 	}
 
-	// Mordisco de Vida
+	/**
+	 * Habilidada " Mordisco de Vida " particular de la raza
+	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);

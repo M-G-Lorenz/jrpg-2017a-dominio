@@ -1,5 +1,10 @@
 package dominio;
 
+/**
+ * 
+ * Una de las posibles razas de personajes que el jugador puede elegir
+ * La cual posee sus propias habilidades
+ */
 public class Humano extends Personaje {
 
 	public Humano(String nombre, Casta casta, int id) {
@@ -20,8 +25,9 @@ public class Humano extends Personaje {
 		habilidadesRaza[0] = "Incentivar";
 		habilidadesRaza[1] = "Golpe Fatal";
 	}
-
-	// Incentivar
+	/**
+	 * Habilidad "Incentivar" particular para la raza, 
+	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
@@ -30,8 +36,9 @@ public class Humano extends Personaje {
 		}
 		return false;
 	}
-
-	// Golpe Fatal
+	/**
+	 * Habilidad "Golpe Fatal" particular para la raza,   
+	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {

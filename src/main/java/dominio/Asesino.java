@@ -1,5 +1,10 @@
 package dominio;
-
+/**
+ * 
+ * Tipo de personaje que puede tener un jugador, con habilidades propias de 
+ * dicha casta para un asesino.
+ *
+ */
 public class Asesino extends Casta {
 
 	public Asesino(double prob_crit, double evasion, double daño_crit) {
@@ -16,6 +21,11 @@ public class Asesino extends Casta {
 		habilidadesCasta[2] = "Robar";
 	}
 
+	
+	/**
+	 * permite el uso de la habilidad "golpe critico" propia de la casta "Asesino"
+	 * y establece sus efectos y condicion de uso
+	 */
 	// Golpe Crítico
 	public boolean habilidad1(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
@@ -26,6 +36,11 @@ public class Asesino extends Casta {
 		return false;
 	}
 
+	
+	/**
+	 * permite el uso de la habilidad "evasion" propia de la casta "Asesino"
+	 * y establece sus efectos y condicion de uso
+	 */
 	// Aumentar Evasion
 	public boolean habilidad2(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {

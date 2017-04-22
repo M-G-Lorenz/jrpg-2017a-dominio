@@ -1,5 +1,9 @@
 package dominio;
-
+/**
+ * 
+ * Interfaz para gestionar luchas entre personajes
+ *
+ */
 public interface Peleable {
 	public int serAtacado(int daño);
 	public int getSalud();
